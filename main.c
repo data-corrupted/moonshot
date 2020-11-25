@@ -7,9 +7,9 @@ int main(void)
     const int screenWidth = 1000;
     const int screenHeight = 800;
     
-    const float falling = 5.0f;
+    const float falling = 8.0f;
     
-    float speed = 100.f;
+    float speed = 20.0f;
 
     InitWindow(screenWidth, screenHeight, "moonshot");
     
@@ -24,9 +24,9 @@ int main(void)
         // Update
         //----------------------------------------------------------------------------------
         
-        if((IsKeyPressed(KEY_SPACE)) && spaceshipCords.y > 200) {
+        if((IsKeyDown(KEY_SPACE)) && spaceshipCords.y > 200) {
             spaceshipCords.y -= speed;
-        }else if((!IsKeyPressed(KEY_SPACE)) && spaceshipCords.y <= 500){
+        }else if((!IsKeyDown(KEY_SPACE)) && spaceshipCords.y <= 600){
             spaceshipCords.y += falling;
         }
         
